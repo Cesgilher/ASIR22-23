@@ -6,10 +6,10 @@ La seguridad informática es el proceso de prevenir el uso no autorizado de un s
 
 Las áreas que cubren la seguridad informática son las siguientes:
 
-- **Confidencialidad**: que solo los usuarios autorizados puedan acceder a los recursos, datos e información.
-- **Integridad**: que solo los usuarios autorizados puedan modificar los datos cuando sea necesario.
-- **Disponibilidad**: los datos deben estar disponibles cuando sea necesario para los usuarios.
-- **Autenticación**: que los datos comuniquen lo que queremos que comuniquen y que sean auténticos.
+1. **Confidencialidad**: que solo los usuarios autorizados puedan acceder a los recursos, datos e información.
+2. **Integridad**: que solo los usuarios autorizados puedan modificar los datos cuando sea necesario.
+3. **Disponibilidad**: los datos deben estar disponibles cuando sea necesario para los usuarios.
+4. **Autenticación**: que los datos comuniquen lo que queremos que comuniquen y que sean auténticos.
 
 ## ¿Cómo se aplica la seguridad informática?
 La seguridad informática abarca unas medidas de seguridad como los programas de software de antivirus, firewalls y otras medidas.
