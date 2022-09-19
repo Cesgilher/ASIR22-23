@@ -11,7 +11,7 @@ Las áreas que cubren la seguridad informática son las siguientes:
 - **Disponibilidad**: los datos deben estar disponibles cuando sea necesario para los usuarios.
 - **Autenticación**: que los datos comuniquen lo que queremos que comuniquen y que sean auténticos.
 
-##¿Cómo se aplica la seguridad informática?
+## ¿Cómo se aplica la seguridad informática?
 La seguridad informática abarca unas medidas de seguridad como los programas de software de antivirus, firewalls y otras medidas.
 
 Para contar con seguridad informática se debe proteger y fortalecer los ordenadores y los sistemas basados en Internet contra el acceso no autorizado y el robo. Algunas de las medidas de seguridad son las siguientes:
