@@ -11,6 +11,9 @@ Las áreas que cubren la seguridad informática son las siguientes:
 3. **Disponibilidad**: los datos deben estar disponibles cuando sea necesario para los usuarios.
 4. **Autenticación**: que los datos comuniquen lo que queremos que comuniquen y que sean auténticos.
 
+[<img src="https://intellipaat.com/blog/wp-content/uploads/2020/12/What-is-Network-Security-Big.png" >](https://intellipaat.com/blog/what-is-network-security/)
+
+
 ## ¿Cómo se aplica la seguridad informática?
 La seguridad informática abarca unas medidas de seguridad como los programas de software de antivirus, firewalls y otras medidas.
 
