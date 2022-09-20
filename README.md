@@ -1,5 +1,5 @@
 # ASIR22-23
-<h2 id="subtitulo">Repositorio con todas las prácticas del curso</h2>
+## Repositorio con todas las prácticas del curso
 En este repositorio se subirán todas las prácticas y trabajos que se hagan tanto de implantación como de seguridad. A parte de algún que otro experimento que haga a lo largo del año.
 
 ---
