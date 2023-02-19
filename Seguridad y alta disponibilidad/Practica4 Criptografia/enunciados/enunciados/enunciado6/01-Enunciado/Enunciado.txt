@@ -1,0 +1,3 @@
+Se ha recibido un correo electrónico con un documento de texto adjunto con unos caracteres indescifrables.
+
+¿Puedes recuperar el mensaje original?

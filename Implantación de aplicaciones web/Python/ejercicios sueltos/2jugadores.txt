@@ -1,0 +1,29 @@
+nombre1 = input("Introduce el nombre del jugador 1: ")
+    apellido1 = input("Introduce el apellido del jugador 1: ")
+    nombre2= input("Introduce el nombre del jugador 2: ")
+    apellido2 = input("Introduce el apellido del jugador 2: ")
+
+    jugador1: Jugador = Jugador(nombre1,apellido1)
+    jugador2: Jugador = Jugador(nombre2,apellido2)
+    jugadores = [jugador1,jugador2]
+         
+        # Combat cartas
+        # sacar una carta para cada jugador
+    for i in range (0,40,2):
+        cartajugador1 = baraja.cartas[i]
+        cartajugador2 = baraja.cartas[i+1]
+        print(cartajugador1)
+        print(cartajugador2)
+        #un punto al jugador que la tenga mas grande
+        if cartajugador1.valor.value > cartajugador2.valor.value:
+            jugadores[0].puntos +=1
+        elif cartajugador1.valor.value < cartajugador2.valor.value:
+            jugadores[1].puntos +=1
+        print(jugadores[0])
+        print(jugadores[1])
+    # al final cuando se acaba la baraja se dice quien gana
+    if jugadores[0].puntos > jugadores[1].puntos:
+        print("El ganador es: " + jugadores[0].nombre_completo()+ " con " + str(jugadores[0].puntos) + " puntos")
+    else:
+        print("El ganador es: " + jugadores[1].nombre_completo()+ " con " + str(jugadores[1].puntos) + " puntos")
+    

@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block nav%} <a href="/logout">Cerrar sesión</a>{%endblock%}
+{%block title%}Inicio{%endblock%}
+{%block content%}
+    <h2>Notas</h2>
+    
+<table>
+    <tr><th>Asignatura</th><th>Calificacion</th></tr>
+    
+    {%for mark in marks%}
+    <tr>
+        <td>{{mark.asignatura}}</td>
+        <td>{{mark.puntuacion}}</td>
+    </tr>
+    {%endfor%}
+    
+
+</table>
+   
+{%endblock%}

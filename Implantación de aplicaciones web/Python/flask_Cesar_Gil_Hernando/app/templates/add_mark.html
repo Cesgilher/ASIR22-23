@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%block nav%}<a href="/register">Registrar usuario</a> <a href="/logout">Cerrar sesión</a>{%endblock%}
+{%block header%}<h2>{%block title%}Notas{%endblock%}</h2>{%endblock%}
+
+
+{%block content%}
+    
+    <table>
+        <tr><th>Alumno</th><th>Asignatura</th><th>Calificacion</th></tr>
+        <form action="" method="POST">
+            <tr>
+            <td>
+                <select type="text" name="alumno" id="alumno" required>
+                    {%for user in users[1:]%}
+                    <option value="{{user.username}}">{{user.username}}</option>
+                    {%endfor%}
+
+            </td>
+            <td>
+                <select type="text" name="asignatura" id="asignatura" required>
+                <option value="Administracion de SGBD">Administracion de SGBD</option>
+                <option value="Implantacion web">Implantacion web</option>
+                <option value="Seguridad y alta disponibilidad">Seguridad y alta disponibilidad</option>
+                <option value="Administracion de Sistemas">Administracion de Sistemas</option>
+                <option value="Administracion de redes">Administracion de redes</option>
+                <option value="Ingles">Ingles</option>
+                <option value="Empresa e iniciativa emprendedora">Empresa e iniciativa emprendedora</option>
+            </td>
+            <td><input type="number" max="10" min="0" name="puntuacion" id="puntuacion" required style="width: 90%;"></td>
+            <td><input type="submit" value="Añadir nota" style="background-color: rgb(34, 192, 34); "></td>
+            </tr>
+        </form>
+        {%for mark in marks%}
+        <tr>
+            <td>{{mark.alumno}}</td>
+            <td>{{mark.asignatura}}</td>
+            <td>{{mark.puntuacion}}</td>
+            <td style="text-align: center;"><a href="{{url_for('web.edit_mark',id=mark.id)}}">Editar</a></td>
+            <td style="background-color: red; text-align: center;"><a href="{{url_for('web.delete_mark',id=mark.id)}}">Eliminar</a></td>
+
+        </tr>
+        {%endfor%}
+        
+    
+    </table>
+     
+{%endblock%}

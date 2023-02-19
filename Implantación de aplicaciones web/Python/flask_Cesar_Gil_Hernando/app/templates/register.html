@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block nav%}<a href="/mark">Editar notas</a> <a href="/logout">Cerrar sesión</a>{%endblock%}
+{%block header%}<h2>{%block title%}Usuarios{%endblock%}</h2>{%endblock%}
+
+{%block content%}
+    <table>
+        <tr><th>ID</th><th>Nombre de usuario</th><th>Email</th><th>Contraseña</th></tr>
+        <form action="" method="POST">
+            <tr>
+            <td></td>
+            <td><input type="text" name="username" id="username" required></td>
+            <td><input type="email" name="email" id="email" required></td>
+            <td><input type="password" name="password" id="password" required></td>
+            <td><input type="submit" value="Registrar" style="background-color: rgb(34, 192, 34);"></td>
+            </tr>
+        </form>
+        {%for user in users[1:]%} 
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td style="background-color: red; text-align: center;"><a href="{{url_for('web.delete_user',id=user.id)}}">Eliminar</td></a>
+        </tr>
+        {%endfor%}
+        
+    
+    </table>
+{%endblock%}

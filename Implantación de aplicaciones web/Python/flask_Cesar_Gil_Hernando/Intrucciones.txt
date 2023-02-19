@@ -1,0 +1,6 @@
+El usuario para poder añadir, editar y borrar tanto notas como usuarios es:
+username=profesor
+password=profesor
+
+De forma que cada solo puede ver sus notas, no editarlas ni borrarlas, ya que no tendria sentido
+Ya que la plataforma es la de un centro, es el profesor el encargado de dar de alta a los alumnos.

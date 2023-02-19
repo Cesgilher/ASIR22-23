@@ -1,0 +1,43 @@
+52012698s
+DHCP Windows Server:
+
+- Instalar el rol DHCP (explicación)
+- Asignar una IP en una subred 192.168.74 con máscara 24 y cuya última cifra sea el 3 número del DNI PEJ 192.168.74.12 (sería el 1X siendo X la 3 cifra del DNI)
+- Crear un ámbito con un rango entre la 2X-3Y (siendo X la 4 cifra del DNI e Y la 5 cifra)
+- Configurar al menos una exclusión, lease time ... (explicación)
+- Mostrar al menos dos equipos que hayan recibido IP de este server. (Mostrar Configuración de redes (ip a/ipconfig) y la configuración de virtualbox de red de cada uno.
+- Mostrar si es posible las asignaciones. (opcional)
+
+
+
+Wireshark
+
+- Mostrar y explicar con capturas el proceso de una asignación por DHCP (y análisis de los paquetes)
+
+
+DHCP Ubuntu Server:
+
+- Instalar isc-dhcp-server (explicación)
+- Asignar una IP en una subred 192.168.52 con máscara 24 y cuya última cifra sea el 6 número del DNI PEJ 192.168.52.06
+- Asignar una IP en una segunda subred 192.168.36 con máscara 24 y cuya última cifra sea el 6 número del DNI PEJ 192.168.36.15
+- Crear un ámbito con un rango para la primera subred entre la 2X-3Y (siendo X la 4 cifra del DNI e Y la 5 cifra) (Poner gateway la IP de la máquina en esta red)192.168.52.6
+192.168.52.21-192.168.52.32
+
+- Crear un ámbito con un rango para la segunda subred entre la 4X-5Y (siendo X la 6 cifra del DNI e Y la 5 cifra) (poner dns por defecto 1.1.1.1 y 8.8.4.4) 192.168.36.6
+192.168.36.46-192.168.36.52
+- Configurar el lease time ... (explicación)
+- Configurar una ip estática
+- Mostrar al menos dos equipos que hayan recibido IP de este server.
+Uno de estos equipos debe recibir IPs de las dos subredes (una de cada en cada adaptador). (Se debe mostrar configuración de redes de  los (3 o más) y la configuración de virtualbox de red de cada uno.)
+- Mostrar si es posible las asignaciones. (opcional)
+
+
+
+Opcionalmente se podrán configurar los dos DHCPs en la misma red y ver quién es el que asigna cada ip.
+
+
+
+Extra: explicar otras opciones de isc-dhcp-server
+
+Se debe seguir el formato de buenas pautas y especificar al inicio del documento el DNI utilizado (en caso de hacerla común especificar cuál).
+(En caso de no contar con DNI utilizar un número aleatorio y especificarlo).

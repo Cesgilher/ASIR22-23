@@ -1,0 +1,3 @@
+Revisando la información en Documents, encontráis un fichero con un mensaje muy extraño. 
+ 
+Se repiten con frecuencia algunos pares de caracteres. Parece hexadecimal. ¿Qué obtienes si lo decodificas?

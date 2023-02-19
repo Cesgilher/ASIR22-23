@@ -1,0 +1,57 @@
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+
+#CLIENTES
+iptables -A INPUT -p icmp --icmp-type echo-request -s 192.168.10.100/32 -i ens34 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -d 192.168.10.100/32 -o ens34 -j ACCEPT
+
+iptables -A INPUT -p icmp --icmp-type echo-request -s 192.168.20.100/32 -i ens35 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -d 192.168.20.100/32 -o ens35 -j ACCEPT
+
+iptables -A OUTPUT -p icmp --icmp-type echo-request -d 192.168.10.100/32 -o ens34 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-request -d 192.168.20.100/32 -o ens35 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type echo-reply -s 192.168.10.100/32 -i ens34 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type echo-reply -s 192.168.20.100/32 -i ens35 -j ACCEPT
+
+
+
+
+#PING INTERNET
+iptables -A OUTPUT -p icmp --icmp-type echo-request -o ens33 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type echo-reply -i ens33 -j ACCEPT
+
+#SSH
+iptables -A INPUT -p tcp --dport 22 -s 192.168.1.97/32 -j ACCEPT
+iptables -A OUTPUT -m state --state  established  -d 192.168.1.97/32 -j ACCEPT
+
+#FORWARD ENTRE CLIENTES
+iptables -I FORWARD -p icmp --icmp-type echo-request -s 192.168.10.100/32 -d 192.168.20.100/32 -j ACCEPT
+iptables -I FORWARD -p icmp --icmp-type echo-reply -d 192.168.10.100/32 -s 192.168.20.100/32 -j ACCEPT
+
+iptables -I FORWARD -p icmp --icmp-type echo-request -d 192.168.10.100/32 -s 192.168.20.100/32 -j ACCEPT
+iptables -I FORWARD -p icmp --icmp-type echo-reply -s 192.168.10.100/32 -d 192.168.20.100/32 -j ACCEPT
+
+
+
+#NAT
+iptables -A FORWARD -s 192.168.10.100/32 -j ACCEPT
+iptables -A FORWARD -d 192.168.10.100/32 -j ACCEPT
+
+
+iptables -A FORWARD -s 192.168.20.100/32 -j ACCEPT
+iptables -A FORWARD -d 192.168.20.100/32 -j ACCEPT
+
+iptables -A FORWARD -m state --state ESTABLISHED -j ACCEPT
+iptables -A POSTROUTING -s 192.168.10.0/24 -o ens33 -j MASQUERADE -t nat
+iptables -A POSTROUTING -s 192.168.20.0/24 -o ens33 -j MASQUERADE -t nat
+
+
+
+#RESTAURAR IPTABLES
+mkdir /etc/iptables
+iptables-save > /etc/iptables/rules.v4
+iptables-restore /etc/iptables/rules.v4
+
+#ACTIVAR BIT DE FORWARD
+echo 1 > /proc/sys/net/ipv4/ip_forward
